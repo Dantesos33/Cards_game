@@ -1,0 +1,56 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: white;
+    font-weight: 700;
+    font-family: cursive;
+  }
+
+  body{
+    background: gray;
+  }
+  
+  .board{
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    grid-template-columns: repeat(3,auto);
+    perspective: 1000px;
+  }
+  
+  .cell{
+    height: 100px;
+    width: 100px;
+    background: black;
+    border: 1px solid white;
+    display: grid;
+    place-items: center;
+    transition: all 1s;
+    transform-style: preserve-3d;
+    position: relative;
+    backface-visibility: hidden;
+    cursor: pointer;
+  }
+  
+  .front,.back{
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  }
+  
+  .front{
+  background: black;
+  }
+  
+  .back{
+  transform: rotateY(180deg);
+  background-color: black;
+  z-index: -1;
+  }
+  
+.cell:hover{
+	transform: rotateY(180deg);
+}
